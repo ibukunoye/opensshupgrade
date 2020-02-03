@@ -1,0 +1,18 @@
+wget http://zlib.net/zlib-1.2.11.tar.gz
+
+tar xf zlib-1.2.11.tar.gz && cd zlib-1.2.11/
+
+./configure && make && make install
+
+wget https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.1p1.tar.gz
+(Note: Feel free to substitute the OpenSSH version with a newer one.)
+
+tar xf openssh-8.1p1.tar.gz && cd openssh-8.1p1/
+
+cp /etc/init.d/ssh /etc/init.d/ssh.old && cp -r /etc/ssh /etc/ssh.old
+(Backup current ssh directories)
+
+./configure --prefix=/usr --sysconfdir=/etc/ssh --with-md5-passwords --with-pam --with-zlib --with-privsep-path=/var/lib/sshd
+
+make && make install
+
