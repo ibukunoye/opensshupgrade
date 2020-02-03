@@ -1,2 +1,2 @@
 # opensshupgrade
-Fixing openssh vulnerabilities via upgrade on Ubuntu 16.04 
+Fixing openssh vulnerabilities by upgrading OpenSSH to the latest version from source.
